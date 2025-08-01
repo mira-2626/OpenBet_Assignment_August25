@@ -70,6 +70,19 @@ Program execution
               Open the analytics notebook business_intelligence/business_intelligence.py
 
 
+Screenshots of Part B
+
+QUESTION 1
+
+<img width="875" height="710" alt="unbillable" src="https://github.com/user-attachments/assets/10a579d1-6a9a-4ee6-ba61-fe14d322fdf6" />
+
+QUESTION 2
+
+<img width="1221" height="791" alt="YEAR-TO-DATE" src="https://github.com/user-attachments/assets/2de9b5e8-f889-44ae-81c1-de95941cf705" />
+
+
+
+
 Backlog
 
         - Address TODO: comments
