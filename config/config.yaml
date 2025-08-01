@@ -1,0 +1,66 @@
+paths:
+  root_path: "/Volumes/workspace/openbet/"
+  master_data_folder: "time_management_master_data/"
+  operational_data_folder: "time_management_operational_data/"
+
+
+raw_layer:
+  schema: "openbet_raw"
+
+operational_layer:
+  schema: "openbet_operational"  
+
+master_data_files:
+  clients:
+    filename: "clients.csv"
+    primary_key: "id"
+  tasks:
+    filename: "tasks.csv"
+    primary_key: "id"
+  teams:
+    filename: "teams.csv"
+    primary_key: "id"
+  users:
+    filename: "users.csv"
+    primary_key: "id"
+  dimdate:
+    filename: "dimdate.csv"
+    primary_key: "datekey"
+
+operational_files:
+  fact_feed:
+    base_name: "fact_feed"
+    primary_key: ["datekey", "user_id", "task_id"]
+    extension: "csv"
+    schema:
+      - name: "datekey"
+        type: "IntegerType"
+        nullable: false
+      - name: "user_id"
+        type: "IntegerType"
+        nullable: false
+      - name: "task_id"
+        type: "IntegerType"
+        nullable: false
+      - name: "recordedtimehours"
+        type: "DoubleType"
+        nullable: true
+  team_moves:
+    base_name: "team_moves_feed"
+    primary_key: ["user_id", "effective_from"]
+    extension: "json"
+    schema:
+      - name: "user_id"
+        type: "StringType"
+        nullable: true
+      - name: "team"
+        type: "ArrayType"
+        nullable: true
+        elementType:
+          - name: "team_id"
+            type: "IntegerType"
+            nullable: true
+          - name: "effective_from"
+            type: "StringType"
+            nullable: true
+
